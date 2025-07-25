@@ -13,9 +13,9 @@ const about_content = {
       <p>
         At VNIDEAS, our story began with a simple yet powerful realization: businesses, regardless of size or industry,
         deserve more than just tools—they need a partner who understands their challenges, shares their aspirations, and
-        walks alongside them toward sustainable success. Founded in [insert founding year, e.g., 2010], VNIDEAS emerged
-        from a deep-seated desire to empower enterprises in Vietnam and beyond, helping them navigate the complexities
-        of a rapidly evolving market with confidence and clarity.
+        walks alongside them toward sustainable success. Founded in 2022, VNIDEAS emerged from a deep-seated desire to
+        empower enterprises in Vietnam and beyond, helping them navigate the complexities of a rapidly evolving market
+        with confidence and clarity.
       </p>
       <p>
         Our founders, a group of passionate innovators with expertise in technology, data analytics, and business
@@ -135,9 +135,9 @@ const about_content = {
       <p>
         Tại VNIDEAS, câu chuyện của chúng tôi bắt đầu từ một nhận thức đơn giản nhưng đầy ý nghĩa: mọi doanh nghiệp, bất
         kể quy mô hay ngành nghề, đều xứng đáng có một đối tác thấu hiểu những thách thức, chia sẻ khát vọng và đồng
-        hành cùng họ hướng tới thành công bền vững. Được thành lập vào [năm thành lập, ví dụ: 2010], VNIDEAS ra đời từ
-        mong muốn mãnh liệt nhằm hỗ trợ các doanh nghiệp tại Việt Nam và xa hơn nữa, giúp họ vượt qua những phức tạp của
-        thị trường đang thay đổi nhanh chóng với sự tự tin và rõ ràng.
+        hành cùng họ hướng tới thành công bền vững. Được thành lập vào 2022, VNIDEAS ra đời từ mong muốn mãnh liệt nhằm
+        hỗ trợ các doanh nghiệp tại Việt Nam và xa hơn nữa, giúp họ vượt qua những phức tạp của thị trường đang thay đổi
+        nhanh chóng với sự tự tin và rõ ràng.
       </p>
       <p>
         Những người sáng lập của chúng tôi, một nhóm những nhà đổi mới đầy nhiệt huyết với chuyên môn trong công nghệ,
