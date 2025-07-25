@@ -1,0 +1,77 @@
+{
+  "common": {
+    "slogan": "Khơi nguồn Ý tưởng Việt",
+    "description": "Đối tác hỗ trợ kỹ thuật cho doanh nghiệp"
+  },
+  "home": {
+    "title": "Công ty TNHH Công nghệ VNIDEAS",
+    "hero_are_build": {
+      "header": "XÂY DỰNG NỀN TẢNG",
+      "description": "Chúng tôi hỗ trợ doanh nghiệp xây dựng các nền tảng hệ thống hiện đại, phát triển các công cụ quản lý công việc chuyên nghiệp, giúp tối ưu hóa quy trình vận hành, nâng cao hiệu suất làm việc cho nhóm và toàn bộ doanh nghiệp. Đồng thời, các giải pháp của chúng tôi còn giúp doanh nghiệp dễ dàng mở rộng quy mô, thích ứng nhanh với sự thay đổi của thị trường, đảm bảo sự phát triển bền vững và lâu dài."
+    },
+    "hero_are_statistics": {
+      "header": "THỐNG KÊ DỮ LIỆU",
+      "description": "Chúng tôi hỗ trợ doanh nghiệp thu thập, phân tích và trình bày các thông tin, số liệu thống kê một cách hiệu quả và trực quan. Nhờ đó, lãnh đạo có thể dễ dàng theo dõi tình hình hoạt động, nhận diện các xu hướng phát triển, phát hiện vấn đề tiềm ẩn, từ đó đưa ra các quyết định quản trị chính xác, kịp thời nhằm nâng cao hiệu quả vận hành và thúc đẩy sự phát triển bền vững cho doanh nghiệp."
+    },
+    "hero_are_it": {
+      "header": "HỖ TRỢ KỸ THUẬT",
+      "description": "Chúng tôi cung cấp dịch vụ hỗ trợ kỹ thuật toàn diện, bao gồm bảo trì hệ thống định kỳ, xử lý sự cố nhanh chóng, tư vấn giải pháp công nghệ phù hợp, và hỗ trợ vận hành liên tục. Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng đồng hành cùng doanh nghiệp, đảm bảo hệ thống hoạt động ổn định, an toàn, nâng cao hiệu quả vận hành và giảm thiểu rủi ro gián đoạn trong quá trình phát triển kinh doanh."
+    },
+    "hero_are_training": {
+      "header": "HỖ TRỢ ĐÀO TẠO",
+      "description": "Chúng tôi cung cấp dịch vụ đào tạo chuyên sâu, hướng dẫn sử dụng hệ thống một cách bài bản, giúp nâng cao kỹ năng chuyên môn cho nhân viên ở mọi cấp độ. Đồng thời, đảm bảo đội ngũ nhân sự có thể vận hành hệ thống hiệu quả, tối ưu hóa quy trình làm việc và phát triển năng lực cá nhân, góp phần nâng cao hiệu quả hoạt động tổng thể của doanh nghiệp."
+    },
+    "footer_intro": "VNIDEAS cung cấp giải pháp toàn diện giúp doanh nghiệp xây dựng hệ thống hiện đại, thống kê dữ liệu, hỗ trợ kỹ thuật và đào tạo nhân sự. Chúng tôi đồng hành tối ưu quy trình, nâng cao hiệu suất, đảm bảo phát triển bền vững và thích ứng thị trường."
+  },
+  "about": {
+    "title": "Về chúng tôi"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Bạn có câu hỏi?",
+    "description": "Nếu bạn cần hỗ trợ hoặc có bất kỳ thắc mắc nào, hãy gửi tin nhắn cho chúng tôi. Đội ngũ VNIDEAS luôn sẵn sàng lắng nghe và hỗ trợ bạn nhanh chóng, tận tâm.",
+    "form_title": "Liên hệ nhanh",
+    "form_success": "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.",
+    "contact_form": {
+      "name_placeholder": "Họ và tên",
+      "email_placeholder": "Địa chỉ email",
+      "subject_placeholder": "Chủ đề",
+      "message_placeholder": "Nội dung tin nhắn",
+      "submit": "Gửi tin nhắn"
+    },
+    "form_validation": {
+      "name_required": "Tên là bắt buộc",
+      "name_min": "Tên phải có ít nhất 2 ký tự",
+      "name_max": "Tên không được quá 50 ký tự",
+      "email_required": "Email là bắt buộc",
+      "email_invalid": "Email không hợp lệ",
+      "subject_required": "Chủ đề là bắt buộc",
+      "subject_min": "Chủ đề phải có ít nhất 5 ký tự",
+      "subject_max": "Chủ đề không được quá 100 ký tự",
+      "message_required": "Tin nhắn là bắt buộc",
+      "message_min": "Tin nhắn phải có ít nhất 10 ký tự",
+      "message_max": "Tin nhắn không được quá 1000 ký tự"
+    }
+  },
+  "menu": {
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "our_services": "Dịch vụ"
+  },
+  "breadcrumb": {
+    "about": {
+      "title": "Về chúng tôi",
+      "description": "Giới thiệu về Công ty TNHH VNIDEAS"
+    },
+    "home": {
+      "title": "Trang chủ"
+    }
+  },
+  "header": {
+    "btn": {
+      "signin": "Đăng nhập",
+      "signup": "Đăng ký"
+    }
+  }
+}

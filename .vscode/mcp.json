@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "/Users/hungdang/Documents/Projects/VNI/NEXTJS/vni-home"
+            ]
+        }
+    }
+}

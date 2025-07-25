@@ -1,0 +1,77 @@
+{
+  "common": {
+    "slogan": "Igniting Vietnamese Ideas",
+    "description": "Technical Support Partner for Businesses"
+  },
+  "home": {
+    "title": "VNIDEAS Technologies Co.,ltd",
+    "hero_are_build": {
+      "header": "BUILDING PLATFORMS",
+      "description": "We assist businesses in building modern system platforms, developing professional task management tools, optimizing operational processes, and enhancing productivity for teams and the entire enterprise. At the same time, our solutions help businesses easily scale, quickly adapt to market changes, and ensure sustainable and long-term development."
+    },
+    "hero_are_statistics": {
+      "header": "DATA STATISTICS",
+      "description": "We support businesses in collecting, analyzing, and presenting information and statistical data effectively and visually. This allows leaders to easily monitor operational status, identify development trends, detect potential issues, and make accurate and timely management decisions to enhance operational efficiency and promote sustainable business growth."
+    },
+    "hero_are_it": {
+      "header": "TECHNICAL SUPPORT",
+      "description": "We provide comprehensive technical support services, including regular system maintenance, quick issue resolution, appropriate technology solution consulting, and continuous operational support. Our team of experts is always ready to accompany businesses, ensuring stable and secure system operation, enhancing operational efficiency, and minimizing disruption risks during business development."
+    },
+    "hero_are_training": {
+      "header": "TRAINING SUPPORT",
+      "description": "We provide in-depth training services, systematically guiding users on how to use the system, enhancing professional skills for employees at all levels. At the same time, we ensure that personnel can operate the system effectively, optimize workflows, and develop personal capabilities, contributing to the overall operational efficiency of the business."
+    },
+    "footer_intro": "VNIDEAS Technologies Co., Ltd is a leading provider of technology solutions and services, dedicated to supporting businesses in their digital transformation journey. Our mission is to empower Vietnamese enterprises with innovative technology, enhancing their operational efficiency and competitiveness in the market."
+  },
+  "about": {
+    "title": "About Us"
+  },
+  "contact": {
+    "title": "Send us a message",
+    "subtitle": "Any Questions?",
+    "description": "If you need support or have any questions, please send us a message. The VNIDEAS team is always ready to listen and assist you quickly and professionally.",
+    "form_title": "Quick Contact",
+    "form_success": "Thank you for contacting us! We will respond as soon as possible.",
+    "contact_form": {
+      "name_placeholder": "Full Name",
+      "email_placeholder": "Email Address",
+      "subject_placeholder": "Subject",
+      "message_placeholder": "Message Content",
+      "submit": "Send Message"
+    },
+    "form_validation": {
+      "name_required": "Name is required",
+      "name_min": "Name must be at least 2 characters",
+      "name_max": "Name must not exceed 50 characters",
+      "email_required": "Email is required",
+      "email_invalid": "Invalid email address",
+      "subject_required": "Subject is required",
+      "subject_min": "Subject must be at least 5 characters",
+      "subject_max": "Subject must not exceed 100 characters",
+      "message_required": "Message is required",
+      "message_min": "Message must be at least 10 characters",
+      "message_max": "Message must not exceed 1000 characters"
+    }
+  },
+  "menu": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "our_services": "Our Services"
+  },
+  "breadcrumb": {
+    "about": {
+      "title": "About Us",
+      "description": "Introducing VNIDEAS Co., Ltd"
+    },
+    "home": {
+      "title": "Home"
+    }
+  },
+  "header": {
+    "btn": {
+      "signin": "Sign In",
+      "signup": "Sign Up"
+    }
+  }
+}
