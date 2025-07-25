@@ -37,7 +37,10 @@
       "email_placeholder": "Địa chỉ email",
       "subject_placeholder": "Chủ đề",
       "message_placeholder": "Nội dung tin nhắn",
-      "submit": "Gửi tin nhắn"
+      "submit": "Gửi tin nhắn",
+      "captcha_label": "Câu hỏi bảo mật:",
+      "captcha_question": "Kết quả của ${captcha.question} là gì?",
+      "captcha_placeholder": "Nhập đáp án"
     },
     "form_validation": {
       "name_required": "Tên là bắt buộc",
@@ -50,7 +53,40 @@
       "subject_max": "Chủ đề không được quá 100 ký tự",
       "message_required": "Tin nhắn là bắt buộc",
       "message_min": "Tin nhắn phải có ít nhất 10 ký tự",
-      "message_max": "Tin nhắn không được quá 1000 ký tự"
+      "message_max": "Tin nhắn không được quá 1000 ký tự",
+      "captcha_required": "Vui lòng giải bài toán bảo mật",
+      "captcha_integer": "Vui lòng nhập số nguyên",
+      "captcha_incorrect": "Câu trả lời không đúng. Vui lòng thử lại"
+    },
+    "api": {
+      "errors": {
+        "method_not_allowed": "Phương thức không được phép. Chỉ chấp nhận POST requests.",
+        "server_config_error": "Lỗi cấu hình server. Vui lòng liên hệ quản trị viên.",
+        "all_fields_required": "Tất cả các trường đều bắt buộc phải điền.",
+        "invalid_email": "Địa chỉ email không hợp lệ.",
+        "captcha_required": "Vui lòng giải bài toán bảo mật.",
+        "captcha_incorrect": "Câu trả lời bài toán bảo mật không đúng. Vui lòng thử lại.",
+        "smtp_connection_failed": "Không thể kết nối đến email server. Vui lòng thử lại sau.",
+        "smtp_auth_failed": "Lỗi xác thực email server. Vui lòng thử lại sau.",
+        "general_error": "Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau hoặc liên hệ trực tiếp với chúng tôi."
+      },
+      "success": {
+        "email_sent": "Email đã được gửi thành công! Chúng tôi sẽ phản hồi bạn sớm nhất có thể."
+      },
+      "email": {
+        "subject_prefix": "[Biểu mẫu liên hệ]",
+        "new_message_title": "Tin nhắn mới từ Contact Form",
+        "sender_info_title": "Thông tin người gửi:",
+        "message_content_title": "Nội dung tin nhắn:",
+        "technical_info_title": "Thông tin kỹ thuật:",
+        "timestamp_label": "Thời gian:",
+        "ip_label": "IP:",
+        "user_agent_label": "User Agent:",
+        "captcha_label": "CAPTCHA:",
+        "name_label": "Tên:",
+        "email_label": "Email:",
+        "subject_label": "Chủ đề:"
+      }
     }
   },
   "menu": {

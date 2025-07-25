@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { getTranslation, getEmailTranslations } from '@/src/utils/i18n-api';
 
 // Validation helper function
 const validateEmail = email => {
@@ -16,7 +17,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({
       success: false,
-      message: 'Method not allowed. Only POST requests are accepted.'
+      message: getTranslation(req, 'api.errors.method_not_allowed')
     });
   }
 
@@ -25,26 +26,41 @@ export default async function handler(req, res) {
     console.error('Missing required environment variables');
     return res.status(500).json({
       success: false,
-      message: 'Server configuration error. Please contact administrator.'
+      message: getTranslation(req, 'api.errors.server_config_error')
     });
   }
 
   try {
     // Extract and validate form data
-    const { name, email, subject, message } = req.body;
+    const { name, email, subject, message, captcha, captchaAnswer, captchaQuestion } = req.body;
 
     // Validation
     if (!name || !email || !subject || !message) {
       return res.status(400).json({
         success: false,
-        message: 'Tất cả các trường đều bắt buộc phải điền.'
+        message: getTranslation(req, 'api.errors.all_fields_required')
       });
     }
 
     if (!validateEmail(email)) {
       return res.status(400).json({
         success: false,
-        message: 'Địa chỉ email không hợp lệ.'
+        message: getTranslation(req, 'api.errors.invalid_email')
+      });
+    }
+
+    // CAPTCHA validation
+    if (!captcha || !captchaAnswer || !captchaQuestion) {
+      return res.status(400).json({
+        success: false,
+        message: getTranslation(req, 'api.errors.captcha_required')
+      });
+    }
+
+    if (parseInt(captcha) !== parseInt(captchaAnswer)) {
+      return res.status(400).json({
+        success: false,
+        message: getTranslation(req, 'api.errors.captcha_incorrect')
       });
     }
 
@@ -87,54 +103,65 @@ export default async function handler(req, res) {
       console.error('SMTP verification failed:', verifyError);
       return res.status(500).json({
         success: false,
-        message: 'Không thể kết nối đến email server. Vui lòng thử lại sau.'
+        message: getTranslation(req, 'api.errors.smtp_connection_failed')
       });
     }
+
+    // Get email translations
+    const emailTranslations = getEmailTranslations(req);
+    const t = emailTranslations.email;
 
     // Email content
     const mailOptions = {
       from: `"${sanitizedData.name}" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL_TO,
       replyTo: sanitizedData.email,
-      subject: `[Contact Form] ${sanitizedData.subject}`,
+      subject: `${t.subject_prefix || '[Contact Form]'} ${sanitizedData.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-            Tin nhắn mới từ Contact Form
+            ${t.new_message_title || 'New message from Contact Form'}
           </h2>
-          
+
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
-            <p><strong>Tên:</strong> ${sanitizedData.name}</p>
-            <p><strong>Email:</strong> ${sanitizedData.email}</p>
-            <p><strong>Chủ đề:</strong> ${sanitizedData.subject}</p>
+            <h3 style="color: #495057; margin-top: 0;">${t.sender_info_title || 'Sender Information:'}</h3>
+            <p><strong>${t.name_label || 'Name'}:</strong> ${sanitizedData.name}</p>
+            <p><strong>${t.email_label || 'Email'}:</strong> ${sanitizedData.email}</p>
+            <p><strong>${t.subject_label || 'Subject'}:</strong> ${sanitizedData.subject}</p>
           </div>
-          
+
           <div style="background-color: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 5px;">
-            <h3 style="color: #495057; margin-top: 0;">Nội dung tin nhắn:</h3>
+            <h3 style="color: #495057; margin-top: 0;">${t.message_content_title || 'Message Content:'}</h3>
             <p style="line-height: 1.6; color: #6c757d;">${sanitizedData.message.replace(/\n/g, '<br>')}</p>
           </div>
-          
+
           <div style="margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 5px; font-size: 12px; color: #6c757d;">
-            <p><strong>Thông tin kỹ thuật:</strong></p>
-            <p>Thời gian: ${new Date().toLocaleString('vi-VN')}</p>
-            <p>IP: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'Unknown'}</p>
-            <p>User Agent: ${req.headers['user-agent'] || 'Unknown'}</p>
+            <p><strong>${t.technical_info_title || 'Technical Information:'}</strong></p>
+            <p>${t.timestamp_label || 'Timestamp'}: ${new Date().toLocaleString(
+        emailTranslations.language === 'vi' ? 'vi-VN' : 'en-US'
+      )}</p>
+            <p>${t.ip_label || 'IP'}: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'Unknown'}</p>
+            <p>${t.user_agent_label || 'User Agent'}: ${req.headers['user-agent'] || 'Unknown'}</p>
+            <p>${t.captcha_label || 'CAPTCHA'}: ${captchaQuestion} = ${captcha} ✓</p>
           </div>
         </div>
       `,
       text: `
-        Tin nhắn mới từ Contact Form
-        
-        Tên: ${sanitizedData.name}
-        Email: ${sanitizedData.email}
-        Chủ đề: ${sanitizedData.subject}
-        
-        Nội dung tin nhắn:
+        ${t.new_message_title || 'New message from Contact Form'}
+
+        ${t.name_label || 'Name'}: ${sanitizedData.name}
+        ${t.email_label || 'Email'}: ${sanitizedData.email}
+        ${t.subject_label || 'Subject'}: ${sanitizedData.subject}
+
+        ${t.message_content_title || 'Message Content:'}
         ${sanitizedData.message}
-        
+
         ---
-        Thời gian: ${new Date().toLocaleString('vi-VN')}
-        IP: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'Unknown'}
+        ${t.timestamp_label || 'Timestamp'}: ${new Date().toLocaleString(
+        emailTranslations.language === 'vi' ? 'vi-VN' : 'en-US'
+      )}
+        ${t.ip_label || 'IP'}: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'Unknown'}
+        ${t.captcha_label || 'CAPTCHA'}: ${captchaQuestion} = ${captcha} ✓
       `
     };
 
@@ -145,7 +172,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      message: 'Email đã được gửi thành công! Chúng tôi sẽ phản hồi bạn sớm nhất có thể.',
+      message: getTranslation(req, 'api.success.email_sent'),
       messageId: info.messageId
     });
   } catch (error) {
@@ -155,20 +182,20 @@ export default async function handler(req, res) {
     if (error.code === 'EAUTH') {
       return res.status(500).json({
         success: false,
-        message: 'Lỗi xác thực email server. Vui lòng thử lại sau.'
+        message: getTranslation(req, 'api.errors.smtp_auth_failed')
       });
     }
 
     if (error.code === 'ECONNECTION') {
       return res.status(500).json({
         success: false,
-        message: 'Không thể kết nối đến email server. Vui lòng thử lại sau.'
+        message: getTranslation(req, 'api.errors.smtp_connection_failed')
       });
     }
 
     return res.status(500).json({
       success: false,
-      message: 'Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau hoặc liên hệ trực tiếp với chúng tôi.'
+      message: getTranslation(req, 'api.errors.general_error')
     });
   }
 }

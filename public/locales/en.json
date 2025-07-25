@@ -37,7 +37,10 @@
       "email_placeholder": "Email Address",
       "subject_placeholder": "Subject",
       "message_placeholder": "Message Content",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "captcha_label": "Security Question:",
+      "captcha_question": "What is ${captcha.question}?",
+      "captcha_placeholder": "Enter your answer"
     },
     "form_validation": {
       "name_required": "Name is required",
@@ -50,7 +53,40 @@
       "subject_max": "Subject must not exceed 100 characters",
       "message_required": "Message is required",
       "message_min": "Message must be at least 10 characters",
-      "message_max": "Message must not exceed 1000 characters"
+      "message_max": "Message must not exceed 1000 characters",
+      "captcha_required": "Please solve the math problem",
+      "captcha_integer": "Please enter a whole number",
+      "captcha_incorrect": "Incorrect answer. Please try again"
+    },
+    "api": {
+      "errors": {
+        "method_not_allowed": "Method not allowed. Only POST requests are accepted.",
+        "server_config_error": "Server configuration error. Please contact administrator.",
+        "all_fields_required": "All fields are required.",
+        "invalid_email": "Invalid email address.",
+        "captcha_required": "Please solve the security question.",
+        "captcha_incorrect": "Incorrect security question answer. Please try again.",
+        "smtp_connection_failed": "Unable to connect to email server. Please try again later.",
+        "smtp_auth_failed": "Email server authentication error. Please try again later.",
+        "general_error": "An error occurred while sending email. Please try again later or contact us directly."
+      },
+      "success": {
+        "email_sent": "Email sent successfully! We will respond to you as soon as possible."
+      },
+      "email": {
+        "subject_prefix": "[Contact Form]",
+        "new_message_title": "New message from Contact Form",
+        "sender_info_title": "Sender Information:",
+        "message_content_title": "Message Content:",
+        "technical_info_title": "Technical Information:",
+        "timestamp_label": "Timestamp:",
+        "ip_label": "IP:",
+        "user_agent_label": "User Agent:",
+        "captcha_label": "CAPTCHA:",
+        "name_label": "Name:",
+        "email_label": "Email:",
+        "subject_label": "Subject:"
+      }
     }
   },
   "menu": {
