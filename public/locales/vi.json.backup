@@ -60,41 +60,35 @@
     }
   },
   "api": {
-    "errors": {
-      "method_not_allowed": "Phương thức không được phép. Chỉ chấp nhận POST requests.",
-      "server_config_error": "Lỗi cấu hình server. Vui lòng liên hệ quản trị viên.",
-      "all_fields_required": "Tất cả các trường đều bắt buộc phải điền.",
-      "invalid_email": "Địa chỉ email không hợp lệ.",
-      "captcha_required": "Vui lòng giải bài toán bảo mật.",
-      "captcha_incorrect": "Câu trả lời bài toán bảo mật không đúng. Vui lòng thử lại.",
-      "smtp_connection_failed": "Không thể kết nối đến email server. Vui lòng thử lại sau.",
-      "smtp_auth_failed": "Lỗi xác thực email server. Vui lòng thử lại sau.",
-      "general_error": "Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau hoặc liên hệ trực tiếp với chúng tôi."
-    },
-    "success": {
-      "email_sent": "Email đã được gửi thành công! Chúng tôi sẽ phản hồi bạn sớm nhất có thể."
-    },
-    "debug": {
-      "smtp_config": "Tạo SMTP transporter với cấu hình:",
-      "smtp_verifying": "Đang xác minh kết nối SMTP...",
-      "smtp_verified": "Kết nối SMTP đã được xác minh thành công",
-      "email_sent_success": "Email đã được gửi thành công:",
-      "error_sending": "Lỗi khi gửi email:"
-    },
-    "email": {
-      "subject_prefix": "[Biểu mẫu liên hệ]",
-      "new_message_title": "Tin nhắn mới từ Contact Form",
-      "sender_info_title": "Thông tin người gửi:",
-      "message_content_title": "Nội dung tin nhắn:",
-      "technical_info_title": "Thông tin kỹ thuật:",
-      "timestamp_label": "Thời gian:",
-      "ip_label": "IP:",
-      "user_agent_label": "User Agent:",
-      "captcha_label": "CAPTCHA:",
-      "name_label": "Tên:",
-      "email_label": "Email:",
-      "subject_label": "Chủ đề:",
-      "unknown": "Không xác định"
+      "errors": {
+        "method_not_allowed": "Phương thức không được phép. Chỉ chấp nhận POST requests.",
+        "server_config_error": "Lỗi cấu hình server. Vui lòng liên hệ quản trị viên.",
+        "all_fields_required": "Tất cả các trường đều bắt buộc phải điền.",
+        "invalid_email": "Địa chỉ email không hợp lệ.",
+        "captcha_required": "Vui lòng giải bài toán bảo mật.",
+        "captcha_incorrect": "Câu trả lời bài toán bảo mật không đúng. Vui lòng thử lại.",
+        "smtp_connection_failed": "Không thể kết nối đến email server. Vui lòng thử lại sau.",
+        "smtp_auth_failed": "Lỗi xác thực email server. Vui lòng thử lại sau.",
+        "general_error": "Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau hoặc liên hệ trực tiếp với chúng tôi."
+      },
+      "success": {
+        "email_sent": "Email đã được gửi thành công! Chúng tôi sẽ phản hồi bạn sớm nhất có thể."
+      },
+      "email": {
+        "subject_prefix": "[Biểu mẫu liên hệ]",
+        "new_message_title": "Tin nhắn mới từ Contact Form",
+        "sender_info_title": "Thông tin người gửi:",
+        "message_content_title": "Nội dung tin nhắn:",
+        "technical_info_title": "Thông tin kỹ thuật:",
+        "timestamp_label": "Thời gian:",
+        "ip_label": "IP:",
+        "user_agent_label": "User Agent:",
+        "captcha_label": "CAPTCHA:",
+        "name_label": "Tên:",
+        "email_label": "Email:",
+        "subject_label": "Chủ đề:",
+        "unknown": "Không xác định"
+      }
     }
   },
   "menu": {

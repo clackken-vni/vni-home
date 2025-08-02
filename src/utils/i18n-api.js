@@ -14,15 +14,19 @@ const translationCache = new Map();
  * @param {string} language - Language code (e.g., 'en', 'vi')
  * @returns {object} Translation object
  */
-const loadTranslation = (language) => {
-  // Check cache first
+const loadTranslation = language => {
+  // Check cache first (but clear cache in development)
+  if (process.env.NODE_ENV === 'development') {
+    translationCache.clear();
+  }
+
   if (translationCache.has(language)) {
     return translationCache.get(language);
   }
 
   try {
     const filePath = path.join(process.cwd(), 'public', 'locales', `${language}.json`);
-    
+
     // Check if file exists
     if (!fs.existsSync(filePath)) {
       console.warn(`Translation file not found for language: ${language}`);
@@ -31,10 +35,10 @@ const loadTranslation = (language) => {
 
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const translations = JSON.parse(fileContent);
-    
+
     // Cache the translations
     translationCache.set(language, translations);
-    
+
     return translations;
   } catch (error) {
     console.error(`Error loading translation for language ${language}:`, error);
@@ -47,7 +51,7 @@ const loadTranslation = (language) => {
  * @param {object} req - Express request object
  * @returns {string} Detected language code
  */
-const detectLanguage = (req) => {
+const detectLanguage = req => {
   // 1. Check if language is specified in request body
   if (req.body && req.body.language) {
     return req.body.language.toLowerCase();
@@ -100,14 +104,11 @@ const getNestedValue = (translations, key) => {
  * @returns {string} Translated message
  */
 const getTranslation = (req, key, options = {}) => {
-  const {
-    fallbackLanguage = 'en',
-    defaultMessage = key
-  } = options;
+  const { fallbackLanguage = 'en', defaultMessage = key } = options;
 
   // Detect language
   const detectedLanguage = detectLanguage(req);
-  
+
   // Try to get translation in detected language
   let translations = loadTranslation(detectedLanguage);
   let message = translations ? getNestedValue(translations, key) : null;
@@ -131,7 +132,7 @@ const getTranslation = (req, key, options = {}) => {
  */
 const getTranslations = (req, keys, options = {}) => {
   const result = {};
-  
+
   keys.forEach(key => {
     result[key] = getTranslation(req, key, options);
   });
@@ -144,10 +145,10 @@ const getTranslations = (req, keys, options = {}) => {
  * @param {object} req - Express request object
  * @returns {object} All email-related translations
  */
-const getEmailTranslations = (req) => {
+const getEmailTranslations = req => {
   const detectedLanguage = detectLanguage(req);
   const translations = loadTranslation(detectedLanguage) || loadTranslation('en');
-  
+
   return {
     language: detectedLanguage,
     email: translations?.api?.email || {},
@@ -156,10 +157,4 @@ const getEmailTranslations = (req) => {
   };
 };
 
-export {
-  detectLanguage,
-  getTranslation,
-  getTranslations,
-  getEmailTranslations,
-  loadTranslation
-};
+export { detectLanguage, getTranslation, getTranslations, getEmailTranslations, loadTranslation };
